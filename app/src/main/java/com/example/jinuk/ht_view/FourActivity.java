@@ -18,7 +18,8 @@ public class FourActivity extends AppCompatActivity {
         setTitle("최종 경로");
 
     }
-    @Override
+
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu4, menu);
@@ -46,5 +47,5 @@ public class FourActivity extends AppCompatActivity {
         }
         this.finish();
         return true;
-    }
+    }*/
 }

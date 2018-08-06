@@ -47,7 +47,7 @@ public class TwoActivity extends AppCompatActivity {
         listView.setIndicatorBounds(width-50, width); //이 코드를 지우면 화살표 위치가 바뀐다.
         listView.setAdapter(adapter);
     }
-    @Override
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu2, menu);
@@ -75,5 +75,5 @@ public class TwoActivity extends AppCompatActivity {
         }
         this.finish();
         return true;
-    }
+    }*/
 }

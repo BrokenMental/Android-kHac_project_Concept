@@ -18,7 +18,8 @@ public class ThreeActivity extends AppCompatActivity {
         setTitle("경로 선택");
 
     }
-    @Override
+
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu3, menu);
@@ -46,5 +47,5 @@ public class ThreeActivity extends AppCompatActivity {
         }
         this.finish();
         return true;
-    }
+    }*/
 }

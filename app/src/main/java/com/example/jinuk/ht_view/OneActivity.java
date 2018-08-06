@@ -12,8 +12,18 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class OneActivity extends AppCompatActivity {
+import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
+public class OneActivity extends FragmentActivity implements OnMapReadyCallback {
+
+    private GoogleMap mMap;
     Intent intent;
 
     @Override
@@ -21,9 +31,22 @@ public class OneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_one);
         setTitle("지역 선택");
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
     }
 
     @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+
+        LatLng SEOUL = new LatLng(37.56, 126.97);
+        mMap.addMarker(new MarkerOptions().position(SEOUL).title("한국의 수도"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(SEOUL));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(10));
+    }
+
+/*    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu1, menu);
@@ -51,5 +74,5 @@ public class OneActivity extends AppCompatActivity {
         }
         this.finish();
         return true;
-    }
+    }*/
 }
